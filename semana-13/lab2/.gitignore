@@ -1,0 +1,5 @@
+MIA_AzureBlob/bin/
+MIA_AzureBlob/obj/
+
+.env
+appsettings.Development.json
