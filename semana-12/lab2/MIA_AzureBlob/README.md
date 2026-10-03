@@ -154,19 +154,15 @@ Entre las principales se encuentran:
 
 ## Protección de la Connection String
 
-La Connection String contiene información sensible que permite acceder al Storage Account, por lo que no fue escrita directamente dentro del código fuente.
+La Connection String contiene información sensible que permite establecer la conexión con el Storage Account de Azure, por lo que no se almacena directamente dentro del código fuente.
 
-Para protegerla se utilizó una variable de entorno llamada:
+Al iniciar la aplicación, el programa solicita al usuario ingresar la Connection String desde la consola:
 
-`AZURE_STORAGE_CONNECTION_STRING`
+`Console.ReadLine()`
 
-La aplicación obtiene el valor mediante:
+La credencial se utiliza únicamente durante la ejecución del programa y no queda escrita dentro de `Program.cs`.
 
-`Environment.GetEnvironmentVariable("AZURE_STORAGE_CONNECTION_STRING")`
-
-De esta manera, el código fuente únicamente contiene el nombre de la variable de entorno y no contiene la clave real de acceso.
-
-Esto permite que el proyecto pueda almacenarse en GitHub sin publicar la Connection String ni las claves de acceso del Storage Account.
+De esta manera, la Connection String y las claves de acceso no se almacenan en el código fuente ni se publican en GitHub.
 
 ## Instrucciones para ejecutar el proyecto
 
@@ -180,29 +176,23 @@ Si el paquete todavía no se encuentra instalado, ejecutar:
 
 `dotnet add package Azure.Storage.Blobs`
 
-### 3. Configurar la Connection String
-
-En PowerShell se debe configurar la Connection String como una variable de entorno:
-
-`$env:AZURE_STORAGE_CONNECTION_STRING="CONNECTION_STRING_DE_AZURE"`
-
-Por seguridad, se debe sustituir el texto anterior por la Connection String real únicamente en la terminal. La credencial no debe escribirse dentro del código ni guardarse en GitHub.
-
-### 4. Ejecutar la aplicación
+### 3. Ejecutar la aplicación
 
 Ejecutar:
 
 `dotnet run`
 
-El programa mostrará el siguiente menú:
+Al iniciar, el programa solicitará ingresar la Connection String de Azure. Esta debe copiarse desde las claves de acceso del Storage Account y pegarse directamente en la consola.
+
+Por seguridad, la Connection String no debe almacenarse dentro del código fuente ni publicarse en GitHub.
+
+Después de establecer la conexión, la aplicación mostrará el siguiente menú:
 
 1. Subir archivo
 2. Listar archivos
 3. Descargar archivo
 4. Eliminar archivo
 5. Salir
-
-El usuario puede seleccionar la operación que desea realizar ingresando el número correspondiente.
 
 ## Pruebas realizadas
 
