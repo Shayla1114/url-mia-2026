@@ -1,0 +1,282 @@
+{
+  "info": {
+    "_postman_id": "3601e13f-7578-425e-b0e4-a51239e84032",
+    "name": "MIA- Semana13- API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54547869"
+  },
+  "item": [
+    {
+      "name": "Consultar Mascota por ID",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "https://petstore3.swagger.io/api/v3/pet/999999999",
+          "protocol": "https",
+          "host": [
+            "petstore3",
+            "swagger",
+            "io"
+          ],
+          "path": [
+            "api",
+            "v3",
+            "pet",
+            "999999999"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Consultar Mascota por ID Copy",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "https://petstore3.swagger.io/api/v3/pet/13429",
+          "protocol": "https",
+          "host": [
+            "petstore3",
+            "swagger",
+            "io"
+          ],
+          "path": [
+            "api",
+            "v3",
+            "pet",
+            "13429"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear mascota",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 55555,\r\n  \"name\": \"PruebaError\"\r\n  \"status\": \"available\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://petstore3.swagger.io/api/v3/pet",
+          "protocol": "https",
+          "host": [
+            "petstore3",
+            "swagger",
+            "io"
+          ],
+          "path": [
+            "api",
+            "v3",
+            "pet"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear mascota Copy",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 13429,\r\n  \"name\": \"Toty\",\r\n  \"category\": {\r\n    \"id\": 1,\r\n    \"name\": \"Chihuahua\"\r\n  },\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 1,\r\n      \"name\": \"pequeña\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://petstore3.swagger.io/api/v3/pet",
+          "protocol": "https",
+          "host": [
+            "petstore3",
+            "swagger",
+            "io"
+          ],
+          "path": [
+            "api",
+            "v3",
+            "pet"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Modificar Mascota",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 13429,\r\n  \"name\": \"Mosho\",\r\n  \"category\": {\r\n    \"id\": 2,\r\n    \"name\": \"Chihuahua\"\r\n  },\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 1,\r\n      \"name\": \"pequeño\"\r\n    }\r\n  ],\r\n  \"status\": \"Sold\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://petstore3.swagger.io/api/v3/pet",
+          "protocol": "https",
+          "host": [
+            "petstore3",
+            "swagger",
+            "io"
+          ],
+          "path": [
+            "api",
+            "v3",
+            "pet"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar por status",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "https://petstore3.swagger.io/api/v3/pet/findByStatus?status=available",
+          "protocol": "https",
+          "host": [
+            "petstore3",
+            "swagger",
+            "io"
+          ],
+          "path": [
+            "api",
+            "v3",
+            "pet",
+            "findByStatus"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "available"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar por status Copy",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "https://petstore3.swagger.io/api/v3/pet/findByStatus?status=eliminado",
+          "protocol": "https",
+          "host": [
+            "petstore3",
+            "swagger",
+            "io"
+          ],
+          "path": [
+            "api",
+            "v3",
+            "pet",
+            "findByStatus"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "eliminado"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Eliminar Mascota",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "https://petstore3.swagger.io/api/v3/pet/13429",
+          "protocol": "https",
+          "host": [
+            "petstore3",
+            "swagger",
+            "io"
+          ],
+          "path": [
+            "api",
+            "v3",
+            "pet",
+            "13429"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
